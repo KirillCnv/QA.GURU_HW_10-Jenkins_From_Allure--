@@ -69,7 +69,7 @@ public class FirstTestPage {
         calendarComponent.setDate(day, month, year);
         return this;
     }
-    @Step("Ввести хобби")
+    @Step("Задать хобби")
     public FirstTestPage setHobbies(String value) {
         hobbiesComponent.setHobbies(value);
 
