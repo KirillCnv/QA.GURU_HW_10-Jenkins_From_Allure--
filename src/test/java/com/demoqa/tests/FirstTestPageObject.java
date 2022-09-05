@@ -17,7 +17,7 @@ public class FirstTestPageObject extends TestConfig {
     @Story("Заполнение формы")
     @Owner("KirillCnv")
     @Severity(SeverityLevel.CRITICAL)
-    @Link(value = "Testing", url = "https://demoqa.com")
+    @Link(value = "Testing", url = "https://demoqa.com/automation-practice-form")
     @DisplayName("Проверка веб формы https://demoqa.com (Jenkins)")
     @Test
     void autoTest() {
