@@ -1,0 +1,54 @@
+plugins {
+    id 'java-library'
+    id 'io.qameta.allure' version '2.10.0'
+}
+
+allure {
+    report {//секция репорта
+        version.set("2.19.0")
+    }
+    adapter { // создает папку allure-result
+        aspectjWeaver.set(true) // Обработка аннотаций
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.19.0")
+            }
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+def selenideVersion = "6.6.6",
+    junitVersion = "5.9.0",
+    slf4jVersion = "1.7.36",
+    javaFaker = "1.0.2"
+
+
+dependencies {
+    testImplementation(
+            "com.codeborne:selenide:$selenideVersion",
+            "org.junit.jupiter:junit-jupiter:$junitVersion",
+            "org.slf4j:slf4j-simple:$slf4jVersion",
+            'io.qameta.allure:allure-selenide:2.19.0',
+            "com.github.javafaker:javafaker:$javaFaker"
+    )
+}
+
+test {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
