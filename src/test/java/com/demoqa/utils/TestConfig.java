@@ -24,7 +24,9 @@ public class TestConfig extends TestData {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-
+        if (System.getProperty("selenide.remote") != null) {
+            Configuration.remote = System.getProperty("selenide.remote");
+        }
     }
 
     @AfterEach
@@ -32,8 +34,8 @@ public class TestConfig extends TestData {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        Attach.addVideo();
+        if ((System.getProperty("selenide.remote") != null)) {
+            Attach.addVideo();
+        }
     }
-
-
 }
