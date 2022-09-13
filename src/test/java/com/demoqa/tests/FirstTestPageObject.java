@@ -5,6 +5,7 @@ import com.demoqa.pages.components.ResultComponent;
 import com.demoqa.utils.TestConfig;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class FirstTestPageObject extends TestConfig {
@@ -19,6 +20,7 @@ public class FirstTestPageObject extends TestConfig {
     @Severity(SeverityLevel.CRITICAL)
     @Link(value = "Testing", url = "https://demoqa.com/automation-practice-form")
     @DisplayName("Проверка веб формы https://demoqa.com (Jenkins)")
+    @Tag("all")
     @Test
     void autoTest() {
         firstTestPage.openPage()
