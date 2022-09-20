@@ -1,4 +1,4 @@
-package com.demoqa.utils;
+package com.demoqa.tests;
 
 import com.github.javafaker.Faker;
 
@@ -7,8 +7,8 @@ import static java.lang.String.format;
 public class TestData {
 
 
-    Faker faker = new Faker();
-    public String firstName = faker.name().firstName(),
+    static Faker faker = new Faker();
+    public static String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
             email = faker.internet().emailAddress(),
             gender = "Male",
@@ -24,7 +24,7 @@ public class TestData {
             city = "Delhi",
             verificationFoto = "1.jpg";
 
-    public String fullName = format("%s %s", firstName, lastName),
+    public static String fullName = format("%s %s", firstName, lastName),
             fullDate = format("%s %s,%s", day, month, year),
             stateAndCity = format("%s %s", state, city);
 

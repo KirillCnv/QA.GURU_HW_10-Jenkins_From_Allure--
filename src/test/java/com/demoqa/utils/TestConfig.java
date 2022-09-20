@@ -8,7 +8,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class TestConfig extends TestData {
+public class TestConfig {
     @BeforeAll
     static void configure() {
         SelenideLogger.addListener("allure", new AllureSelenide());
